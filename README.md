@@ -43,7 +43,7 @@ func initSchema() (*graphql.Schema, error) {
             "resolve": "getValue"
         }`,
         j2g.ResolveMap{
-            "getValue": func getValue(p graphql.ResolveParams) (interface{}, error) {
+            "getValue": func(p graphql.ResolveParams) (interface{}, error) {
                 name, ok := p.Args["name"].(string)
                 if !ok {
                     name = ""
